@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import profileImage from '../images/cestmoi2.png'; 
+import profileImage from '../images/itsme.png'; 
 
 const AboutMeSection = styled.section`
   display: flex;
@@ -28,6 +28,7 @@ const AboutMeContent = styled.div`
 const AboutMeTitle = styled.h2`
   font-family: 'Fraunces', serif; 
   font-weight: normal;
+  font-style: italic;
   color: #02776F;
   font-size: 3rem; 
   margin-right: 50px; 
@@ -46,7 +47,7 @@ const AboutMeParagraph = styled.p`
 `;
 
 const AboutMeImage = styled.img`
-  max-width: 250px;
+  max-width: 350px;
   margin-right: 50px;
   transition: transform 0.3s ease-in-out;
 

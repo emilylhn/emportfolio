@@ -34,6 +34,7 @@ const Title = styled.h1`
 const Tagline = styled.p`
   font-family: 'Poppins', sans-serif;
   color: #02776F;
+  font-size: x-large;
 `;
 
 const HeroSection = () => {
