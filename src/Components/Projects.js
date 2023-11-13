@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProjectImage1 from '../images/placeholder1.PNG'; 
-import ProjectImage2 from '../images/placeholder2.PNG';
+import ProjectImage1 from '../images/zamboni2.PNG'; 
+import ProjectImage2 from '../images/cookiegame.PNG';
 
 
 const ProjectsContainer = styled.div`
@@ -11,6 +11,11 @@ const ProjectsContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   padding-bottom: 40px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 const Project = styled.a`
@@ -21,32 +26,45 @@ const Project = styled.a`
   width: 45%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 20px;
 
-  &:hover::before {
+  &:before {
     content: attr(data-title);
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    border-radius: 5px;
-    transition: opacity 0.3s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    color: #02776F;
+    border-radius: 10px;
     opacity: 0;
+    transition: opacity 0.3s;
+    /* padding-left: 10px;
+    padding-right: 40px; */
   }
 
   &:hover::before {
     opacity: 1;
   }
+
+  @media screen and (max-width: 768px) {
+    flex: 0 0 calc(100% - 40px); 
+    margin-right: 0; 
+  }
 `;
 
 const ProjectImage = styled.img`
   width: 100%;
-  height: auto;
+  max-height: auto;
   display: block;
   margin: 0 auto;
+  border-radius: 10px;
 `;
 
 const ProjectsTitle = styled.h2`
@@ -65,11 +83,11 @@ const ProjectsSection = () => {
     <div>
     <ProjectsTitle>Projects</ProjectsTitle>
     <ProjectsContainer>
-      <Project href="project1-link" data-title="Project 1 description">
-        <ProjectImage src={ProjectImage1} alt="Project 1" />
+      <Project href="https://github.com/emilylhn/projectzamboni" data-title="Zamboni Vibes was a fun browser game that uses OOP. Keep the zamboni driver employed by not running over the hockey players.">
+        <ProjectImage src={ProjectImage1} alt="Zamboni Vibes image includes cartoon ice rink, zamboni and hockey players" />
       </Project>
-      <Project href="project2-link" data-title="Project 2 description">
-        <ProjectImage src={ProjectImage2} alt="Project 2" />
+      <Project href="https://github.com/emilylhn/cookiegame" data-title="Cookie Clicker was an idle game made using React.">
+        <ProjectImage src={ProjectImage2} alt="Cookie Clicker game image" />
       </Project>
     </ProjectsContainer>
     </div>
